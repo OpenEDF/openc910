@@ -325,7 +325,8 @@ module tb();
       $dumpfile("test.vcd");
       $dumpvars;  
     `else
-      $fsdbDumpvars();
+      $fsdbDumpfile("openc910.fsdb");
+      $fsdbDumpvars(0, tb);
     `endif
   `endif
   end

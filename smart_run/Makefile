@@ -77,7 +77,6 @@ SIM_DUMP := -P $(VERDI_HOME)/share/PLI/VCS/LINUX64/novas.tab \
 else
 SIM_DUMP :=
 endif
-else
 ifeq (${SIM}, iverilog)
 SIM_DUMP = -DNO_DUMP
 else
@@ -135,6 +134,8 @@ else
     endif
 endif
 
+VERDI_SIM_FILE := -f ../logical/filelists/sim.fl
+
 compile:
 	@echo "  [THead-smart] Compiling smart now ... "
 	@echo "  [THead-smart] SIM = $(SIM)"
@@ -166,7 +167,7 @@ cleanVerilator:
 	@cd ./work && rm -rf obj_dir/
 
 wavedebug:
-	@cd ./work && verdi -top tb -ssf novas.fsdb -nologo
+	@cd ./work && verdi -sv $(VERDI_SIM_FILE) -top tb -ssf openc910.fsdb -nologo
 
 ################################################################################
 # Cases related
