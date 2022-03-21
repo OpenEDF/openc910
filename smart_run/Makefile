@@ -80,7 +80,7 @@ endif
 ifeq (${SIM}, iverilog)
 SIM_DUMP = -DNO_DUMP
 else
-SIM_DUMP := +define+NO_DUMP
+SIM_DUMP :=
 endif
 endif
 

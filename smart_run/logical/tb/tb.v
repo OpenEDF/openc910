@@ -311,8 +311,6 @@ module tb();
   
   end
   
-  
-  
   parameter cpu_cycle = 110;
   `ifndef NO_DUMP
   initial
