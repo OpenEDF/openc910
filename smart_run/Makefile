@@ -89,7 +89,6 @@ TIMESCALE := -timescale=1ns/100fs
 SIMULATOR_OPT := -sverilog -full64 -kdb -lca -debug_access \
                  +nospecify +notimingchecks +lint=TFIPC-L  \
                  -debug_access+all -debug_acc=dumptf -debug_region+cell+encrypt \
-                 -cpp g++-4.8 -cc gcc-4.8 -LDFLAGS -Wl,--no-as-needed \
                  -Mupdate
 
 SIMULATOR_DEF := +define+no_warning +define+TSMC_NO_WARNING
